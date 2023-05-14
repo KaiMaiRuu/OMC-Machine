@@ -1,0 +1,305 @@
+[
+    {
+        "id": "14ce8746d67d2472",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "04ef2807b11ffe60",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "4402b93b2a702de7",
+        "type": "ui_tab",
+        "name": "omc",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "0834fc5d49d8d846",
+        "type": "ui_group",
+        "name": "",
+        "tab": "4402b93b2a702de7",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a40c74eed6770830",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.mqttdashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "61ab9bde0b954c6b",
+        "type": "ui_button",
+        "z": "14ce8746d67d2472",
+        "name": "",
+        "group": "0834fc5d49d8d846",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "on",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "on",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 530,
+        "y": 240,
+        "wires": [
+            [
+                "98f1e7929decb4e3",
+                "7e813a44e85344df",
+                "a682a1a6e45ac178"
+            ]
+        ]
+    },
+    {
+        "id": "98f1e7929decb4e3",
+        "type": "mqtt out",
+        "z": "14ce8746d67d2472",
+        "name": "",
+        "topic": "omc/machine",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a40c74eed6770830",
+        "x": 770,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7e813a44e85344df",
+        "type": "debug",
+        "z": "14ce8746d67d2472",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a682a1a6e45ac178",
+        "type": "ui_text",
+        "z": "14ce8746d67d2472",
+        "group": "0834fc5d49d8d846",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "สถานะ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 750,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "280a3d459ef0dd03",
+        "type": "ui_button",
+        "z": "14ce8746d67d2472",
+        "name": "",
+        "group": "0834fc5d49d8d846",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "off",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 530,
+        "y": 340,
+        "wires": [
+            [
+                "a682a1a6e45ac178",
+                "98f1e7929decb4e3",
+                "7e813a44e85344df"
+            ]
+        ]
+    },
+    {
+        "id": "b39e9ec4a3cf3a7b",
+        "type": "function",
+        "z": "14ce8746d67d2472",
+        "name": "",
+        "func": "if(msg.payload ==\"on\"){    \n    msg.payload = \"on\" ;\n}else if(msg.payload == \"off\"){    \n    msg.payload = \"0ff\" ;\n   \n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 140,
+        "wires": [
+            [
+                "a682a1a6e45ac178"
+            ]
+        ]
+    },
+    {
+        "id": "9965e0cdf8923a56",
+        "type": "mqtt in",
+        "z": "14ce8746d67d2472",
+        "name": "",
+        "topic": "omc/machine",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "a40c74eed6770830",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "b39e9ec4a3cf3a7b"
+            ]
+        ]
+    }
+]
